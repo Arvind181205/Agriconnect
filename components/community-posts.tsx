@@ -1,7 +1,7 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
 import { MessageCircleIcon as ChatBubble, ThumbsUp } from "lucide-react"
 
 // Mock data
@@ -9,7 +9,7 @@ const posts = [
   {
     id: 1,
     author: "Ravi Singh",
-    avatar: "/placeholder.svg?height=50&width=50",
+    avatar: "/c1.png?height=50&width=50",
     time: "2 hours ago",
     title: "Dealing with Brown Spot in Rice",
     content:
@@ -18,12 +18,12 @@ const posts = [
     comments: 8,
     tags: ["Rice", "Disease", "Question"],
     isExpertReply: false,
-    image: "/placeholder.svg?height=200&width=400",
+    image: "/comunity1.png?height=200&width=400",
   },
   {
     id: 2,
     author: "Dr. Anita Sharma",
-    avatar: "/placeholder.svg?height=50&width=50",
+    avatar: "/a.png?height=50&width=50",
     time: "1 day ago",
     title: "Tips for Water Conservation During Summer",
     content:
@@ -36,7 +36,7 @@ const posts = [
   {
     id: 3,
     author: "Suresh Kumar",
-    avatar: "/placeholder.svg?height=50&width=50",
+    avatar: "/s.png?height=50&width=50",
     time: "3 days ago",
     title: "Market Prices for Wheat in South Region",
     content:

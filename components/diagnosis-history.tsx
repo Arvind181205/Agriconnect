@@ -1,5 +1,5 @@
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
 const diagnosisHistory = [
   {
@@ -8,7 +8,7 @@ const diagnosisHistory = [
     cropType: "Wheat",
     diagnosis: "Leaf Rust",
     severity: "moderate",
-    thumbnail: "/placeholder.svg?height=100&width=100",
+    thumbnail: "/leafrust.jpg?height=100&width=100",
   },
   {
     id: 2,
@@ -16,7 +16,7 @@ const diagnosisHistory = [
     cropType: "Rice",
     diagnosis: "Brown Spot",
     severity: "mild",
-    thumbnail: "/placeholder.svg?height=100&width=100",
+    thumbnail: "/mild.jpg?height=100&width=100",
   },
 ]
 

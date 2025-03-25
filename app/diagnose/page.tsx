@@ -1,12 +1,33 @@
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Camera, Upload } from "lucide-react"
-import DiagnosisHistory from "@/components/diagnosis-history"
-import VoiceControl from "@/components/voice-control"
+"use client"; // Ensure this is a client-side component
+
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import VoiceControl from "@/components/voice-control";
+import dynamic from "next/dynamic";
+import { useState } from "react";
+
+// Dynamically import DiagnosisHistory to avoid SSR issues
+const DiagnosisHistory = dynamic(() => import("@/components/diagnosis-history"), { ssr: false });
 
 export default function DiagnosePage() {
+  const [imageUploaded, setImageUploaded] = useState(false);
+  const [analysisResult, setAnalysisResult] = useState(null);
+
+  const handleImageUpload = (event) => {
+    if (event.target.files.length > 0) {
+      setImageUploaded(true);
+    }
+  };
+
+  const analyzeImage = () => {
+    setAnalysisResult({
+      disease: "Leaf Blight",
+      suggestion: "Use fungicide and maintain proper irrigation.",
+    });
+  };
+
   return (
     <div className="space-y-6">
       <div className="flex flex-col md:flex-row justify-between md:items-center gap-4">
@@ -23,37 +44,33 @@ export default function DiagnosePage() {
           <CardDescription>Take a clear photo of the affected plant or upload an existing image</CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
-          <div className="border-2 border-dashed rounded-lg p-6 text-center">
-            <div className="mx-auto w-32 h-32 mb-4 rounded-full bg-muted flex items-center justify-center">
-              <Upload className="h-10 w-10 text-muted-foreground" />
-            </div>
-            <p className="text-sm text-muted-foreground mb-4">
-              Drag and drop an image here, or click the buttons below
-            </p>
-            <div className="flex flex-col sm:flex-row justify-center gap-3">
-              <Button className="flex gap-2">
-                <Camera className="h-4 w-4" />
-                Take Photo
-              </Button>
-              <Button variant="outline">Browse Files</Button>
-            </div>
-            <Input type="file" accept="image/*" className="hidden" id="image-upload" />
-          </div>
-
+          <input type="file" accept="image/*" onChange={handleImageUpload} className="w-full border p-2 rounded-md" />
           <div>
             <Label htmlFor="crop-type">Crop Type (Optional)</Label>
             <Input id="crop-type" placeholder="e.g., Rice, Wheat, Cotton" />
           </div>
         </CardContent>
         <CardFooter>
-          <Button className="w-full" size="lg" disabled>
+          <Button className="w-full" size="lg" disabled={!imageUploaded} onClick={analyzeImage}>
             Analyze Image
           </Button>
         </CardFooter>
       </Card>
 
+      {analysisResult && (
+        <Card className="w-full bg-green-100 p-4 rounded-md">
+          <CardHeader>
+            <CardTitle>Diagnosis Result</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p><strong>Possible Disease:</strong> {analysisResult.disease}</p>
+            <p><strong>Suggested Treatment:</strong> {analysisResult.suggestion}</p>
+          </CardContent>
+        </Card>
+      )}
+
+      {/* Lazy load DiagnosisHistory to avoid hydration issues */}
       <DiagnosisHistory />
     </div>
-  )
+  );
 }
-

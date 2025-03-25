@@ -1,7 +1,7 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { Badge } from "@/components/ui/badge"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardFooter } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
 import { ThumbsUp } from "lucide-react"
 
 // Mock data
@@ -14,7 +14,7 @@ const expertAnswers = [
       "For organic weed control, consider these methods: 1) Mulching with organic materials like straw or leaves to suppress weed growth, 2) Regular shallow cultivation to disrupt weed seedlings, 3) Crop rotation to break weed cycles, 4) Cover cropping during off-seasons, and 5) Thermal weeding for smaller areas. The key is consistency and implementing multiple strategies together.",
     expert: "Dr. Sunita Patel",
     expertTitle: "Organic Farming Specialist",
-    avatar: "/placeholder.svg?height=50&width=50",
+    avatar: "/a.png?height=50&width=50",
     time: "1 day ago",
     likes: 34,
   },
@@ -26,7 +26,7 @@ const expertAnswers = [
       "To improve drainage in paddy fields, I recommend: 1) Install subsurface drainage pipes if the issue is severe, 2) Create proper field leveling with a slight slope toward drainage channels, 3) Incorporate organic matter to improve soil structure over time, 4) Consider raised bed farming for portions of your field, and 5) Maintain clean drainage ditches around field perimeters. Assess your specific field conditions before implementing these solutions.",
     expert: "Prof. Raghav Singh",
     expertTitle: "Soil & Water Management Expert",
-    avatar: "/placeholder.svg?height=50&width=50",
+    avatar: "/s.png?height=50&width=50",
     time: "3 days ago",
     likes: 28,
   },
