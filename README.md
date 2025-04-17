@@ -1,4 +1,5 @@
 # Agriconnect: AI & Expert Agriculture for Farmer Prosperity 
+deployment link: https://agriconnect-phi.vercel.app
 ## Problem: 
 Small farmers struggle with profit losses due to limited access to timely information and 
 expert advice on crop health, weather, and best practices. Inefficient methods and literacy barriers 
