@@ -41,6 +41,6 @@ analysis.
 2. Backend: Python, Flask 
 3. AI/ML: TensorFlow, OpenCV 
 4. Database: MongoDB, Supabase 
-5. Cloud: AWS 
+5. Cloud: AWS
 ### AgriConnect transforms agriculture by democratizing AI and expert access, building resilient, 
 ### prosperous, and inclusive farming communities for all. 
